@@ -32,7 +32,10 @@ Which makes me wonder if there is any way to do this faster. I'm sure there must
 
 ### System Requirements
 
-* Java 6
+* Java 6 or Java 7
+
+*Note*: currently there are problems compiling under Java 8. If you're including s3s3mirror in a larger project that uses Java8, compile
+it with Java 7 first, and compile your other code with Java 8. It should be fine to run with Java 8, just some issues with the compiler.
 
 ### Building
 
@@ -51,6 +54,7 @@ The above command requires that Maven 3 is installed.
                                For other time units, use these suffixes: y (years), M (months), d (days), w (weeks),
                                                                          h (hours), m (minutes), s (seconds)
     -i (--iam) : Attempt to use IAM Role if invoked on an EC2 instance
+    -P (--profile) VAL        : Use a specific profile from your credential file (~/.aws/config)
     -m (--max-connections) N  : Maximum number of connections to S3 (default 100)
     -n (--dry-run)            : Do not actually do anything, but show what would be done (default false)
     -r (--max-retries) N      : Maximum number of retries for S3 requests (default 5)
